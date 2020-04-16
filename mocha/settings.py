@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'todo',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'mocha.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"home/","Template")],
+        'DIRS': [os.path.join(BASE_DIR,"home/","Template"),
+        os.path.join(BASE_DIR,"todo/","Template")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

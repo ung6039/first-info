@@ -18,10 +18,14 @@ from django.urls import path
 
 from home.views import home_view
 from home.views import homework
+from home.views import var_view
+from todo.views import todo_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_view),
     path('quote/',homework),
+    path('var/',var_view),
+    path('todos/',todo_view,name="todos")
 ]
 

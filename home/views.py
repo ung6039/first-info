@@ -10,4 +10,8 @@ def home_view(request):
 def homework(request):
     return HttpResponse("<h1>인생은 B(brith) D(Death) 사이의 C(Chicken)이다.</h1>")
 
+def var_view(request):
+    present = 11
+    nums = {1,2,3,4,5,6}
 
+    return render(request,"var.html",{"aaa" : nums} )
