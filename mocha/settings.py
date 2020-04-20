@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'todo',
+    'todos',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,"home/","Template"),
-        os.path.join(BASE_DIR,"todo/","Template")],
+        os.path.join(BASE_DIR,"todo/","Template"),
+        os.path.join(BASE_DIR,"todos/","Template")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
