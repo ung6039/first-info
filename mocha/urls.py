@@ -21,6 +21,7 @@ from home.views import homework
 from home.views import var_view
 from todo.views import todo_view
 from todos.views import Todos_view
+from todo.views import toto_su
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('quote/',homework),
     path('var/',var_view),
     path('todos/',todo_view,name="todos"),
-    path('todos/in_progress/',Todos_view, name="todos")
+    path('todos/in_progress/',toto_su, name="ename"),
+    
 ]
 

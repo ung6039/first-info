@@ -1,12 +1,14 @@
 from django.shortcuts import render
 
-from .models import Todos
+from .models import Try_todo
 
 # Create your views here.
 
 def Todos_view(request):
-    Todos =Todos.objects.all()
+    try_try = Try_todo.objects.all()
     data={
-        "todos": Todos,
+        "ename": try_try,
+        "test": "11111",
+        "advice":"성공은 실패의 어머니이다",
     }
-    return render(request,"index-todo.html",data)
+    return render(request,"index-todo.html", data)

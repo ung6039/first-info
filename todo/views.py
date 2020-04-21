@@ -8,3 +8,10 @@ def todo_view(request):
         "todos" : todos,
     }
     return render(request, "todo_list.html",data)
+
+def toto_su(request):
+    todos =Todo.objects.all()
+    data={
+        "todos": todos,
+    }
+    return render(request,"todo_sucess.html",data)

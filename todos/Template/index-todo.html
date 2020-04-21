@@ -7,18 +7,17 @@
     <thead>
     <tr>
     <th>To-do 목록</th>
-    <th>하악하악!</th>
     <th>완료했나요?</th>
-    <th>하악하악!</th>
     </tr>
     </thead>
-    {% for todo in Todos %}
-    <thead>
-    <tr>
-    <th>{{ todo.task }}</th>
-    <th>{{ todo.is_done }}</th>
-    </tr>
-    </thead>
+    {% for do in ename %}
+    <table>
+    <th>
+        <td>{{ do.todo }}</td>
+        <td>{{ do.done_false }}</td>
+    </th>
+    </table>
     {% endfor %}
+    
 </table>
 </body>
