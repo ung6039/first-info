@@ -17,16 +17,25 @@ def todo_view(request):
     }
     return render(request,"todo_list.html",data)
 
-def toto_su(request):
-    todos =Todo.objects.all()
-    data={
-        "todos": todos,
-        
-    }
-    return render(request,"todo_sucess.html",data)
+def toto_su(request,pk):
+    print(pk)
+    target =Todo.objects.get(pk=pk)
+    print(target.is_done)
+    target.is_done =True
+    print(target.is_done)
+    target.save()
+    return redirect("todos")
+
 
 def delete_todo(request,pk):
     target =Todo.objects.get(pk=pk)
     target.delete()
     return redirect("todos")
-    
+
+def todo_back(request,pk):
+    target = Todo.objects.get(pk=pk)
+    print(target.is_done)
+    target.is_done = False
+    print(target.is_done)
+    target.save()
+    return redirect("todos")    

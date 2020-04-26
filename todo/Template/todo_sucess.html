@@ -19,6 +19,19 @@
     <th>{{ todo.is_done }}</th>
     {% endif %}
     </tr>
+    {% if todo.is_done == True %}
+    <tr>
+        <th>
+            완료 목록
+        </th>
+        <td>
+           {{ todo.task }}
+        </td>
+        <td>
+            {{ todo.is_done }}
+        </td>
+    </tr>
+    {% endif %}
     </thead>
     {% endfor %}
 </table>
