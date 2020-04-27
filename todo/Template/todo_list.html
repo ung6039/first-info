@@ -18,6 +18,8 @@
             <h1 style="float:left;">{{ form.as_p}}</h1>
             <button class="btn btn-sm btn-primary" style="height:60px;" type="submit">추가</button>
         </form>
+        <br>
+        <h1>{{ now }}</h1>
     </div>
     <img src="/static/img/Todolist.jpg" style="text-align: left;"> 
     <table class="table" style="background-color: beige;">
@@ -31,7 +33,10 @@
             <th style="text-align: left;" class="list_id">
                 <b>{{ todo.is_done }}</b>
             </th>
-           
+            <td>
+                <h4>START !!</h4> 
+                {{ todo.Todo_time}}
+            </td>
             <td style="width:30%;text-align: right;">
                 <a class="btn btn-sm btn-danger" href="{% url 'reload' pk=todo.pk %}">완료</a>
                 <a class ="btn btn-sm btn-primary" href="{% url 'todo_del' pk=todo.pk %}">삭제</a>
@@ -53,7 +58,9 @@
             <th style="text-align: left;" class="list_id" style="background-color: blue;">
                 <b>{{ todo.is_done }}</b>
             </th>
-            <td>{{ todo.Todo_time }}</td>
+            <td>
+                <h4>Complete!!</h4>
+                {{ todo.Todo_time }}</td>
             <td style="text-align: right;">
                 <a class ="btn btn-sm btn-primary" href="{% url 'back' pk=todo.pk %}">back(다시 하기)</a>
                 <a class="btn btn-sm btn-danger" href="{% url 'todo_del' pk=todo.pk %}">삭제</a>

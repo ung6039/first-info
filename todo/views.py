@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import Todo
 from .forms import AddForm
+from django.utils import timezone
+import datetime
 # Create your views here.
 
 def todo_view(request):
@@ -9,20 +11,22 @@ def todo_view(request):
         form = AddForm(request.POST)
         if form.is_valid():
             form.save()
+    now = datetime.datetime.now()
+    print(now)
     form = AddForm()
     todos = Todo.objects.all()
     data={
         "todos" : todos,
         "form": form,
+        "now":now,
     }
     return render(request,"todo_list.html",data)
 
 def toto_su(request,pk):
     print(pk)
     target =Todo.objects.get(pk=pk)
-    print(target.is_done)
     target.is_done =True
-    print(target.is_done)
+    target.Todo_time = timezone.now()
     target.save()
     return redirect("todos")
 

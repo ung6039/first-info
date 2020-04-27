@@ -11,7 +11,7 @@ class Todo(models.Model):
     is_done = models.BooleanField(default=False)
 
     Todo_time = models.DateTimeField(
-        blank=True, null=True )
+        blank=True, null=True, default=timezone.now())
     
     def __str__(self):
         return self.task
