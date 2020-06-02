@@ -6,6 +6,24 @@ from django.utils import timezone
 import datetime
 # Create your views here.
 
+def todo_main(request):
+    return render(request,"todo_main.html")
+
+def todo_work(request):
+    if request.method == "POST":
+        form = AddForm(request.POST)
+        if form.is_valid():
+            form.save()
+    now = datetime.datetime.now()
+    form = AddForm()
+    todos = Todo.objects.all()
+    data={
+        "todos" : todos,
+        "form": form,
+        "now":now,
+    }
+    return render(request,"todo_work.html",data)
+
 def todo_view(request):
     if request.method == "POST":
         form = AddForm(request.POST)

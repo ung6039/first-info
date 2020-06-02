@@ -16,16 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from todo.views import todo_view
+from todo.views import todo_view,todo_main,todo_work
 from todo.views import toto_su,delete_todo,todo_back
-
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',todo_view,name="todos"),
-    path('todos/',todo_view,name="todos"),
+    path('',todo_main,name="main"),
+    path('list',todo_view,name="list"),
+    path('todos/',todo_work,name="todos"),
     path('todos/<pk>/in_progress/',toto_su, name="reload"),
     path('todos/<pk>/delete/',delete_todo,name="todo_del"),
     path('todos/<pk>/back/',todo_back,name="back")
