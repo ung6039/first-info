@@ -43,3 +43,5 @@ def todo_back(request,pk):
     print(target.is_done)
     target.save()
     return redirect("todos")    
+
+
