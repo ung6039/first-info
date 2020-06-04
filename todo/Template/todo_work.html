@@ -1,17 +1,10 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<style>
-.work{
- text-align: center;
-}
-</style>
-</head>
 
-<body>
+{% extends 'base.html'%}
+
+
+{%block content%}
 <diV class="work">
  <img src="/static/img/Todolist.jpg" style="text-align: left;"> 
- <a href="{%url 'main' %}" class="btn btn-md btn-primary">HOME</a>
  </div>
  <div>
     
@@ -63,4 +56,4 @@
         {% endif %}
         {% endfor %}
     </table>
-</body>
+{% endblock content%}
